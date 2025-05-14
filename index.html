@@ -1,9 +1,126 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=auto, initial-scale=1.0">
+   <link rel="stylesheet" href="/html-css-cheatsheet-starting/styles.css">
+   <title>Practice 1</title>
+</head>
 <body>
-  <h1>Sam</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
+   <h1>HTML and CSS cheatcheet</h1>
+   <nav>
+      <a href="#html">
+         <h5>HTML</h5>
+      </a>
+      <a href="#css">
+         <h5>CSS</h5>
+      </a>
+      <a href="#learn-more">
+         <h5>More cheatcheets</h5>
+      </a>
+      <a href="#contact">
+         <h5>Contact</h5>
+      </a>
+   </nav>
+      <section>
+   <ol type="I">
+         <li>
+            <h3 id="html">HTML</h3>
+         </li>
+         <li>
+            <h4>What is HTML?</h4>
+         </li>
+   </ol>
+         <p>HTML stands for <span>H</span>yper<span>T</span>ext <span>M</span>arkup<span>L</span>anguage.
+         It's the easiest and first computer language you need to learn to be able to build websites. <br>
+         In the table below you'll find a cheatsheet for getting started with HTML.
+         </p>
+         <table>
+            <thead>
+               <th>Name</th>
+               <th>Tag</th>
+               <th>Description</th>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>Head</td>
+                  <td>&lt;head&gt;</td>
+                  <td><p>Is used to make the head of the HTML document, what goes here wont be seen on the screen.</p></td>
+               </tr>
+               <tr>
+                  <td>
+                     Link
+                  </td>
+                  <td>
+                     &lt;link&gt;
+                  </td>
+                  <td>
+                     Here you can link CSS stylesheet or other links like fonts.
+                  </td>
+               </tr>
+               <tr>
+                  <td>Title</td>
+                  <td>&lt;title&gt;</td>
+                  <td>The title of your page goes here, and this tag goes in the head. You can see it as the title in the browser tab.</td>
+               </tr>
+               <tr>
+                  <td>Body</td>
+                  <td>&lt;body&gt;</td>
+                  <td>Here goes the body elements of the HTML like h1-h6, p, tables, forms etc.</td>
+               </tr>
+            </tbody>
+         </table>
+      </section>
+      <section>
+         <ol type="I">
+            <li>
+               <h3 id="css">CSS</h3>
+            </li>
+            <li>
+               <h4>What is CSS?</h4>
+            </li>
+         </ol>
+         <p>CSS stands for <span>C</span>ascading <span>S</span>tyle <span>S</span>heets, it's like clothes for your web page, it adds color, images, style etc. With these two posibilities for what your website looks like are endless. Below are some cheatsheets to get an idea of how it works.
+         </p>
+         <table>
+            <thead>
+               <th>
+                  Name
+               </th>
+               <th>
+                  Attribute
+               </th>
+               <th>
+                  Description
+               </th>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>Text align</td>
+                  <td>text-align: ;</td>
+                  <td>This attribute centers text, bestween the colon and semi-colon goes the value of the attribute. Here it can be center, left or right just like in microsoft word.</td>
+               </tr>
+               <tr>
+                  <td>Display</td>
+                  <td>display: ;</td>
+                  <td>This can control how the boxes of elements are displayed, inline is default for p, meaning it takes only as much space as needed. Block for elements like h1-h6, means they start a new line and take the whole width. inline-block is like inline but width and height can be set</td>
+               </tr>
+               <tr>
+                  <td>Padding</td>
+                  <td>padding: ;</td>
+                  <td>This adds space between the element and its border, to make it in one attribute, the values are padding: top left bottom right;</td>
+               </tr>
+               <tr>
+                  <td>Margin</td>
+                  <td>margin: ;</td>
+                  <td>Adds space between the border and the edge of the page, same rules apply as for padding. also for both margin-direction can be used instead if only one value needs to be set.</td>
+               </tr>
+            </tbody>
+         </table>
+      </section>
+      <footer>
+         <p id="contact">IG: @rand0mpige0n</p>
+      </footer>
 </body>
-
 </html>
+
