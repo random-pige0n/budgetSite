@@ -1,9 +1,95 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-  <h1>Sam</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
+    <div class="container">
+        <header class="header">
+            <h1>💰 Budget Tracker</h1>
+            <div class="total-balance">
+                <span class="balance-label">Total Balance:</span>
+                <span class="balance-amount" id="totalBalance">$0.00</span>
+            </div>
+        </header>
 
+        <main class="main-content">
+            <!-- Income Section -->
+            <section class="budget-section income-section">
+                <h2>📈 Income</h2>
+                <div class="input-group">
+                    <input type="text" id="incomeDescription" placeholder="Income source (e.g., Salary, Freelance)" class="input-field">
+                    <input type="number" id="incomeAmount" placeholder="Amount" class="input-field" step="0.01" min="0">
+                    <button onclick="addIncome()" class="btn btn-income">Add Income</button>
+                </div>
+                <div class="items-list" id="incomeList"></div>
+                <div class="section-total">
+                    <strong>Total Income: $<span id="totalIncome">0.00</span></strong>
+                </div>
+            </section>
+
+            <!-- Expenses Section -->
+            <section class="budget-section expense-section">
+                <h2>📉 Expenses</h2>
+                <div class="input-group">
+                    <input type="text" id="expenseDescription" placeholder="Expense category (e.g., Groceries, Rent)" class="input-field">
+                    <input type="number" id="expenseAmount" placeholder="Amount" class="input-field" step="0.01" min="0">
+                    <button onclick="addExpense()" class="btn btn-expense">Add Expense</button>
+                </div>
+                <div class="items-list" id="expenseList"></div>
+                <div class="section-total">
+                    <strong>Total Expenses: $<span id="totalExpenses">0.00</span></strong>
+                </div>
+            </section>
+
+            <!-- Budget Categories (Optional) -->
+            <section class="budget-section categories-section">
+                <h2>🏷️ Budget Categories</h2>
+                <div class="categories-grid" id="categoriesGrid">
+                    <!-- Categories will be dynamically added here -->
+                </div>
+                <div class="input-group">
+                    <input type="text" id="newCategory" placeholder="New category name" class="input-field">
+                    <input type="number" id="categoryBudget" placeholder="Budget amount" class="input-field" step="0.01" min="0">
+                    <button onclick="addCategory()" class="btn btn-category">Add Category</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Configuration Panel -->
+        <aside class="config-panel">
+            <h3>⚙️ Settings</h3>
+            <div class="config-group">
+                <label for="currency">Currency:</label>
+                <select id="currency" onchange="updateCurrency()">
+                    <option value="$">Dollar ($)</option>
+                    <option value="€">Euro (€)</option>
+                    <option value="£">Pound (£)</option>
+                    <option value="¥">Yen (¥)</option>
+                </select>
+            </div>
+            <div class="config-group">
+                <label for="theme">Theme:</label>
+                <select id="theme" onchange="changeTheme()">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                </select>
+            </div>
+            <div class="config-group">
+                <button onclick="exportData()" class="btn btn-export">Export Data</button>
+                <button onclick="importData()" class="btn btn-import">Import Data</button>
+            </div>
+            <div class="config-group">
+                <button onclick="clearAllData()" class="btn btn-clear">Clear All Data</button>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>

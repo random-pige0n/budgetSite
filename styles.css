@@ -1,0 +1,439 @@
+/* CSS Variables for Easy Customization */
+:root {
+    /* Colors - Easy to change */
+    --primary-color: #4a90e2;
+    --secondary-color: #7ed321;
+    --danger-color: #d0021b;
+    --warning-color: #f5a623;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --text-light: #666666;
+    --border-color: #e1e5e9;
+    
+    /* Spacing - Easy to adjust */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Border radius */
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Font sizes */
+    --font-xs: 0.75rem;
+    --font-sm: 0.875rem;
+    --font-base: 1rem;
+    --font-lg: 1.125rem;
+    --font-xl: 1.25rem;
+    --font-2xl: 1.5rem;
+    --font-3xl: 1.875rem;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --card-background: #2d2d2d;
+    --text-color: #ffffff;
+    --text-light: #cccccc;
+    --border-color: #404040;
+}
+
+/* Blue theme */
+[data-theme="blue"] {
+    --primary-color: #1e40af;
+    --secondary-color: #3b82f6;
+    --background-color: #eff6ff;
+    --card-background: #ffffff;
+}
+
+/* Green theme */
+[data-theme="green"] {
+    --primary-color: #059669;
+    --secondary-color: #10b981;
+    --background-color: #f0fdf4;
+    --card-background: #ffffff;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-xl);
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    grid-column: 1 / -1;
+    background: var(--card-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.header h1 {
+    font-size: var(--font-3xl);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.total-balance {
+    text-align: right;
+}
+
+.balance-label {
+    display: block;
+    font-size: var(--font-sm);
+    color: var(--text-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+.balance-amount {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Main content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* Budget sections */
+.budget-section {
+    background: var(--card-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.budget-section h2 {
+    font-size: var(--font-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-color);
+}
+
+.income-section {
+    border-left: 4px solid var(--secondary-color);
+}
+
+.expense-section {
+    border-left: 4px solid var(--danger-color);
+}
+
+.categories-section {
+    border-left: 4px solid var(--warning-color);
+}
+
+/* Input groups */
+.input-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.input-field {
+    flex: 1;
+    min-width: 150px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: var(--font-base);
+    background: var(--card-background);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* Buttons */
+.btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-income {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.btn-expense {
+    background: var(--danger-color);
+    color: white;
+}
+
+.btn-category {
+    background: var(--warning-color);
+    color: white;
+}
+
+.btn-export {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-import {
+    background: var(--text-light);
+    color: white;
+}
+
+.btn-clear {
+    background: var(--danger-color);
+    color: white;
+}
+
+/* Items list */
+.items-list {
+    margin-bottom: var(--spacing-md);
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-xs);
+    border: 1px solid var(--border-color);
+}
+
+.item-description {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.item-amount {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.item-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.btn-small {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-xs);
+    background: var(--text-light);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.btn-small:hover {
+    background: var(--text-color);
+}
+
+/* Section totals */
+.section-total {
+    padding: var(--spacing-md);
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-size: var(--font-lg);
+    border: 2px solid var(--border-color);
+}
+
+/* Categories grid */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.category-card {
+    background: var(--background-color);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.category-name {
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-color);
+}
+
+.category-budget {
+    font-size: var(--font-sm);
+    color: var(--text-light);
+}
+
+/* Configuration panel */
+.config-panel {
+    background: var(--card-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    height: fit-content;
+    position: sticky;
+    top: var(--spacing-md);
+}
+
+.config-panel h3 {
+    font-size: var(--font-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+.config-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.config-group label {
+    display: block;
+    font-size: var(--font-sm);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-color);
+}
+
+.config-group select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--card-background);
+    color: var(--text-color);
+    font-size: var(--font-sm);
+}
+
+.config-group .btn {
+    width: 100%;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: var(--spacing-sm);
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .input-field {
+        min-width: auto;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .config-panel {
+        position: static;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: var(--font-2xl);
+    }
+    
+    .balance-amount {
+        font-size: var(--font-xl);
+    }
+    
+    .budget-section {
+        padding: var(--spacing-md);
+    }
+    
+    .config-panel {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Animation for new items */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.item {
+    animation: slideIn 0.3s ease;
+}
+
+/* Utility classes for easy customization */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
